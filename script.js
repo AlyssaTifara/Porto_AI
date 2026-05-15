@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'm111': {
             title: 'Dashboard Analitik Operasional Event – M111 Ngalam Folding Bike',
             overview:
-                'Pipeline transformasi data dan dashboard Power BI untuk memantau distribusi peserta dan KPI operasional event mencakup pembersihan, standarisasi, dan penggabungan data dari tiga sumber operasional (500+ catatan).',
+                'Studi kasus operational monitoring berbasis ETL: data registrasi dari tiga sumber (100+ catatan) dibersihkan, distandarkan, dan digabungkan untuk membangun dashboard KPI event yang lebih konsisten dan mudah ditindaklanjuti.',
             tools: [
                 'Power BI',
                 'Power Query',
@@ -21,33 +21,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Data Pipeline'
             ],
             problem:
-                'Data registrasi peserta dari tiga sumber operasional berbeda memiliki format tidak konsisten, nilai kosong, dan entri duplikat yang menghambat pelaporan akurat selama event berlangsung.',
+                'Tim operasional membutuhkan pemantauan peserta secara cepat, tetapi data registrasi tersebar di tiga sumber dengan format berbeda, nilai kosong, dan duplikasi yang menurunkan kecepatan serta akurasi pelaporan.',
             dataTools: {
                 source:
-                'Data registrasi peserta event M111 Ngalam Folding Bike (500+ catatan, 3 sumber operasional)',
+                'Data registrasi peserta event M111 Ngalam Folding Bike (100+ catatan, 3 sumber operasional)',
                 tools:
                 'Power BI, Power Query, Microsoft Excel',
                 variables:
                 'Distribusi peserta, status registrasi, kupon subsidi, KPI operasional event'
             },
             insights: [
-                'Standarisasi entri dari tiga sumber menghasilkan dataset terpadu yang siap digunakan untuk pelaporan KPI.',
-                'Kolom kalkulasi turunan memungkinkan derivasi metrik tanpa mengubah data sumber asli.',
-                'Dashboard Power BI memungkinkan pemantauan distribusi peserta secara langsung oleh tim operasional event.'
+                'Standarisasi lintas sumber menghasilkan satu dataset operasional yang lebih stabil untuk monitoring harian.',
+                'Transformasi terstruktur membantu menurunkan noise data sehingga pembacaan KPI menjadi lebih jelas.',
+                'Dashboard Power BI memudahkan tim melihat distribusi peserta dan status registrasi pada satu tampilan.'
             ],
             recommendation: {
                 actions:
-                'Otomasi refresh data dan integrasi langsung ke sistem registrasi untuk eliminasi input manual.',
+                'Jadwalkan refresh data berkala dan tetapkan template input registrasi agar kualitas data lebih konsisten.',
                 impact:
-                'Reduksi lag pengambilan keputusan operasional dan peningkatan akurasi rekonsiliasi data.'
+                'Pelaporan operasional menjadi lebih cepat, proses rekonsiliasi lebih rapi, dan keputusan lapangan lebih responsif.'
             },
             reflection: {
                 limitations:
-                'Data bersifat operasional satu event; belum ada pipeline otomatis untuk refresh berkala.',
+                'Data masih terbatas pada satu event dan belum terhubung langsung ke sumber registrasi real-time.',
                 learned:
-                'Desain transformasi data yang terdokumentasi memastikan reprodusibilitas dan kemudahan audit.',
+                'Workflow ETL yang terdokumentasi membantu menjaga konsistensi proses saat data diperbarui.',
                 future:
-                'Bangun pipeline ETL otomatis dan integrasi ke sistem registrasi digital untuk event berikutnya.'
+                'Mengembangkan alur ETL semi-otomatis dan validasi input di awal proses untuk event berikutnya.'
             },
             image: {
                 src: '',
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'atm': {
             title: 'Sistem Informasi Akreditasi D4 SIB – Politeknik Negeri Malang',
             overview:
-                'Sistem terintegrasi untuk mengonsolidasikan data akreditasi PS, memformalkan alur validasi bertingkat, dan menghasilkan borang otomatis demi efisiensi, akurasi, dan ketertelusuran proses.',
+                'Studi kasus structured information system untuk akreditasi: konsolidasi data, validasi bertingkat berbasis peran, dan penyusunan borang yang lebih terkontrol agar proses administrasi lebih konsisten.',
             tools: [
                 'Laravel 10',
                 'Bootstrap 5',
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Dokumentasi Sistem',
             ],
             problem:
-                'Proses manual dan data yang tersebar membuat pengelolaan sulit, validasi berjenjang tidak terekam konsisten, dan penyusunan borang memakan waktu tinggi dengan risiko inkonsistensi.',
+                'Sebelum sistem dibangun, data akreditasi tersebar di banyak dokumen, alur validasi tidak terdokumentasi rapi, dan penyusunan borang memerlukan waktu panjang dengan risiko kesalahan manual.',
             dataTools: {
                 source:
                 'Data dosen, kriteria akreditasi (1–9), dokumen pendukung, status validasi & catatan revisi',
@@ -96,23 +96,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Role pengguna, tingkat validasi, komentar revisi, lampiran, progres borang'
             },
             insights: [
-                'Validasi bertingkat menaikkan kualitas dan konsistensi data akreditasi.',
-                'Peran/otorisasi yang jelas memperlancar alur persetujuan antar pihak.',
-                'Otomasi ekspor borang menekan kesalahan manual dan mempercepat penyusunan dokumen.'
+                'Validasi bertahap per peran meningkatkan keterlacakan perubahan data dan status dokumen.',
+                'Hak akses yang jelas membantu menjaga ketertiban alur kerja antar pengguna.',
+                'Template borang terstruktur mengurangi pengulangan kerja saat kompilasi dokumen akreditasi.'
             ],
             recommendation: {
                 actions:
-                'Tambahkan dashboard progres & notifikasi; tingkatkan responsivitas tampilan mobile.',
+                'Tambahkan dashboard progres per kriteria dan notifikasi tindak lanjut untuk reviewer.',
                 impact:
-                'Lead time akreditasi turun, akurasi borang naik, dan tracking menjadi lebih mudah.'
+                'Koordinasi lintas tim menjadi lebih jelas, waktu penyusunan borang berkurang, dan status validasi lebih mudah dipantau.'
             },
             reflection: {
                 limitations:
-                'Integrasi eksternal terbatas dan tampilan mobile belum sepenuhnya optimal.',
+                'Integrasi dengan sistem eksternal kampus masih terbatas dan optimasi tampilan mobile masih bertahap.',
                 learned:
-                'Pemetaan alur bisnis serta dokumentasi sistem adalah kunci pada aplikasi multi-role.',
+                'Pemetaan proses bisnis sejak awal sangat penting untuk menjaga konsistensi sistem multi-role.',
                 future:
-                'Integrasi ke sistem akademik kampus dan penambahan analitik progres.'
+                'Melanjutkan integrasi ke sistem akademik kampus serta menambahkan ringkasan analitik progres per periode.'
             },
             image: {
                 src: 'assets/images/projects/akre/1752500344214.jpg',
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'retention': {
             title: 'Studify Mobile – Class Scheduler',
             overview:
-                'Aplikasi penjadwalan akademik lintas platform: desain skema MySQL multi-entitas, REST API Laravel untuk pertukaran data terstruktur antara Flutter dan backend, serta integrasi Firebase Cloud Messaging untuk notifikasi perubahan jadwal.',
+                'Studi kasus intelligent scheduling workflow: aplikasi lintas platform dengan skema data terstruktur, REST API untuk sinkronisasi informasi jadwal, dan notifikasi otomatis agar koordinasi kelas lebih tertib.',
             tools: [
                 'Flutter',
                 'Laravel',
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Figma (design collaboration)'
             ],
             problem:
-                'Koordinasi jadwal melalui grup chat menyebabkan informasi tercecer, perubahan jadwal terlewat, dan miskomunikasi antar anggota kelas.',
+                'Koordinasi jadwal yang mengandalkan chat membuat informasi tercecer, perubahan tidak selalu terbaca, dan keputusan kelas sering terlambat.',
             dataTools: {
                 source:
                 'Data pengguna, kelas, jadwal kuliah, notifikasi',
@@ -147,23 +147,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Role pengguna, jadwal, waktu notifikasi, status kelas'
             },
             insights: [
-                'Satu sumber informasi mengurangi miskomunikasi jadwal dan duplikasi pesan.',
-                'Notifikasi otomatis meningkatkan kepatuhan terhadap perubahan jadwal.',
-                'Dokumentasi use case/flow menjaga pengembangan fitur berjalan terarah dan dapat dipelihara.'
+                'Sentralisasi jadwal dalam satu aplikasi membantu mengurangi miskomunikasi antar anggota kelas.',
+                'Notifikasi otomatis mempercepat respons pengguna terhadap perubahan jadwal.',
+                'Dokumentasi use case dan alur proses menjaga pengembangan fitur tetap terstruktur.'
             ],
             recommendation: {
                 actions:
-                'Integrasi kalender (sinkronisasi) dan peningkatan UI berbasis feedback pengguna.',
+                'Tambahkan sinkronisasi kalender pribadi dan pengingat berbasis prioritas jadwal.',
                 impact:
-                'Koordinasi akademik lebih rapi, efisien, dan on-time.'
+                'Koordinasi akademik menjadi lebih rapi, keterlambatan informasi berkurang, dan aktivitas kelas lebih terjadwal.'
             },
             reflection: {
                 limitations:
-                'Belum terintegrasi dengan sistem akademik kampus karena aplikasi dirancang sebagai solusi mandiri untuk mahasiswa.',
+                'Aplikasi masih berdiri mandiri dan belum terintegrasi dengan sistem akademik resmi kampus.',
                 learned:
-                'Dokumentasi sistem (use case, flow, dan ERD) terbukti krusial untuk menjaga kolaborasi tim dan konsistensi pengembangan.',
+                'Perancangan alur data dan dokumentasi sistem membantu tim menjaga konsistensi implementasi lintas modul.',
                 future:
-                'Pengembangan fitur lanjutan seperti manajemen tugas, absensi, serta opsi integrasi dengan sistem kampus.'
+                'Pengembangan lanjutan mencakup manajemen tugas, absensi, serta opsi integrasi bertahap dengan platform kampus.'
             },
             image: {
                 src: 'assets/images/projects/studify/photo_2025-12-24_22-04-23.jpg',
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'order-delay': {
             title: 'Analisis Harga Maskapai – Strategi Masuk Pasar',
             overview:
-                'EDA dataset tiket penerbangan domestik India menggunakan Python (Pandas): profiling data, penanganan nilai null, normalisasi tipe, segmentasi maskapai berdasarkan kluster rute, dan visualisasi pola harga musiman melalui dashboard Power BI.',
+                'EDA tiket domestik India untuk membersihkan data, membaca segmentasi maskapai dan rute, serta melihat pola harga per rute.',
             tools: [
                 'Power BI',
                 'Python',
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Analisis Statistik'
             ],
             problem:
-                'Kurangnya pemahaman pola harga dan segmentasi pasar menghambat penetapan harga yang kompetitif dan berkelanjutan.',
+                'Tanpa pemetaan pola harga dan segmentasi pasar yang jelas, strategi masuk pasar berisiko tidak kompetitif dan sulit dievaluasi.',
             dataTools: {
                 source:
                 'Data harga tiket penerbangan domestik India',
@@ -212,23 +212,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Harga tiket, maskapai, rute, kelas penerbangan, waktu'
             },
             insights: [
-                'Segmentasi harga antara low-cost dan full-service terlihat jelas dan stabil.',
-                'Harga dipengaruhi musim (seasonality) dan rute bisnis utama.',
-                'Pemosisian produk & segmen pasar menentukan strategi pricing yang efektif.'
+                'Perbedaan harga antara segmen low-cost dan full-service terlihat konsisten pada banyak rute.',
+                'Pola musiman dan jenis rute berpengaruh terhadap rentang harga yang ditawarkan.',
+                'Segmentasi pasar membantu menyusun skenario pricing yang lebih relevan per target pelanggan.'
             ],
             recommendation: {
                 actions:
-                'Optimalkan dynamic pricing berbasis musim & rute; monitor KPI harga per segmen.',
+                'Susun pedoman harga berbasis musim dan rute prioritas, lalu monitor KPI harga per segmen secara berkala.',
                 impact:
-                'Peningkatan revenue potensial dan penguatan positioning pasar.'
+                'Mendukung keputusan pricing yang lebih terukur dan membantu memperkuat positioning pasar awal.'
             },
             reflection: {
                 limitations:
-                'Analisis berbasis data historis tanpa komponen biaya operasional.',
+                'Analisis masih berbasis data historis dan belum memasukkan komponen biaya operasional maskapai.',
                 learned:
-                'Visualisasi dan segmentasi data mempercepat pengambilan keputusan bisnis.',
+                'Segmentasi dan visualisasi data mempermudah pembacaan pola pasar untuk diskusi strategi.',
                 future:
-                'Model prediksi harga dan perluasan analisis ke rute internasional.'
+                'Melanjutkan evaluasi dengan data periode terbaru dan memperluas analisis ke variasi rute yang lebih luas.'
             },
             image: {
                 src: 'assets/images/projects/kecbis/dashboard_2.jpg',
@@ -238,35 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 report: 'assets/documents/projects/kecbis/UAS Kecbis_Kel 7.pdf'
             }
         },
-        // 'qa-dashboard': {
-        //     title: 'QA Dashboard Starter',
-        //     overview: 'Lightweight QA dashboard to surface defect trends, reopen rates, and cycle time for faster triage.',
-        //     tools: ['SQL', 'Tableau', 'QA'],
-        //     problem: 'QA leads lacked a single view of defect trends and reopen patterns.',
-        //     dataTools: {
-        //         source: 'Issue tracker exports, test cycle logs',
-        //         tools: 'SQL, Tableau',
-        //         variables: 'Severity, component, reopen status, cycle time'
-        //     },
-        //     insights: [
-        //         'Reopen spikes cluster in two components after minor releases.',
-        //         'Cycle time improves when pairing testers with component experts.',
-        //         'Severity mix shifts toward medium in the weeks after large releases.'
-        //     ],
-        //     recommendation: {
-        //         actions: 'Add release-specific QA checklists and pair testers with component owners.',
-        //         impact: 'Lower reopen rates and steadier release quality.'
-        //     },
-        //     reflection: {
-        //         limitations: 'Historical data lacks consistent labels.',
-        //         learned: 'Clear ownership plus minimal dashboards accelerate QA feedback loops.',
-        //         future: 'Normalize labels and add alerts for reopen surges.'
-        //     },
-        //     links: {
-        //         github: '#',
-        //         report: '#'
-        //     }
-        // }
     };
 
     
@@ -636,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // ===== 8C. HANDLE M111 DASHBOARD GALLERY (FIXED VERSION) =====
+            // ===== 8C. HANDLE M111 DASHBOARD GALLERY =====
             const m111DashboardGallery = document.getElementById('m111-dashboard-gallery');
             const m111DashboardGrid = document.getElementById('m111-dashboard-grid');
 
@@ -652,7 +623,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     m111DashboardGallery.hidden = true;
                 } else {
 
-                    // TITLE (UI FIX: seperti "Tampilan Dashboard")
                     const galleryTitleEl = m111DashboardGallery.querySelector('.website-preview-title');
                     if (galleryTitleEl) {
                         galleryTitleEl.textContent =
@@ -677,10 +647,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         const img = imgContainer.querySelector('.dashboard-gallery-image');
                         const skeleton = imgContainer.querySelector('.dashboard-gallery-skeleton');
 
-                        // IMPORTANT: FIX path + safe URL encoding
                         const safeSrc = encodeURI(item.src);
 
-                        // Set aspect ratio to prevent layout collapse
                         if (item.width && item.height) {
                             imgContainer.style.aspectRatio = `${item.width} / ${item.height}`;
                         }
@@ -719,7 +687,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         m111DashboardGrid.appendChild(imgContainer);
                     });
 
-                    // hide kalau semua gagal
                     m111DashboardGallery.hidden =
                         m111DashboardGrid.children.length === 0;
                 }
@@ -766,96 +733,6 @@ document.addEventListener('DOMContentLoaded', function() {
             showErrorPage('Kesalahan Pemuatan', 'Terjadi kesalahan saat memuat detail proyek. Silakan coba lagi.');
         }
     }
-    
-    // ========================================
-    // SCROLL TO TOP BUTTON (OPTIONAL)
-    // Uncomment this section if you want a "back to top" button
-    // ========================================
-    /*
-    // Create scroll to top button
-    const scrollBtn = document.createElement('button');
-    scrollBtn.innerHTML = '↑';
-    scrollBtn.setAttribute('id', 'scrollToTop');
-    scrollBtn.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: none;
-        z-index: 999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: all 0.3s ease;
-    `;
-    document.body.appendChild(scrollBtn);
-    
-    // Show/hide scroll button based on scroll position
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollBtn.style.display = 'block';
-        } else {
-            scrollBtn.style.display = 'none';
-        }
-    });
-    
-    // Scroll to top when button is clicked
-    scrollBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Hover effect
-    scrollBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px)';
-        this.style.backgroundColor = 'var(--primary-dark)';
-    });
-    
-    scrollBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.backgroundColor = 'var(--primary-color)';
-    });
-    */
-    
-    // ========================================
-    // FADE-IN ANIMATION ON SCROLL (OPTIONAL)
-    // Uncomment this section for fade-in effects
-    // ========================================
-    /*
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Add fade-in class to elements you want to animate
-    const fadeElements = document.querySelectorAll('.card, .skill-category, .certificate-item');
-    fadeElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    */
-    
-    // ========================================
-    // CONSOLE MESSAGE (OPTIONAL - FOR FUN)
-    // ========================================
     
 });
 

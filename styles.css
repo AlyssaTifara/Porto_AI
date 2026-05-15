@@ -133,6 +133,7 @@ a:hover {
 /* === HEADER & NAVIGATION === */
 header {
     background: rgba(14, 22, 46, 0.75);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
@@ -344,6 +345,13 @@ section::before {
     z-index: 1;
 }
 
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
 .hero-title {
     font-size: 2.75rem;
     line-height: 1.2;
@@ -398,7 +406,7 @@ section::before {
     background-color: var(--background);
 }
 
-/* Cute & interesting frames (non-generic, still professional) */
+/* Decorative frame treatment for the profile photo */
 .profile-photo-container.frame-charm {
     padding: 10px;
     border: 2px dashed var(--primary-color);
@@ -532,6 +540,7 @@ section::before {
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
 
@@ -619,6 +628,7 @@ section::before {
     flex-direction: column;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
 
@@ -723,7 +733,7 @@ section::before {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Legacy tool-badge (kept for backward compatibility) */
+/* Legacy tool-badge kept for backward compatibility */
 .tool-badge {
     background-color: var(--primary-light);
     color: var(--primary-color);
@@ -749,6 +759,23 @@ section::before {
 .project-card:hover .project-card-cta {
     color: var(--purple-500);
     transform: translateX(6px);
+}
+
+.section-cta-center {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.page-top-spacing-sm {
+    padding: var(--spacing-sm) 0 0;
+}
+
+.page-top-padding-sm {
+    padding-top: var(--spacing-sm);
+}
+
+.page-top-padding-lg {
+    padding-top: var(--spacing-lg);
 }
 
 /* === PROJECT DETAIL PAGE === */
@@ -1133,6 +1160,7 @@ section::before {
     padding: var(--spacing-md);
     border-radius: 12px;
     border: 1px solid var(--border-color);
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     box-shadow: var(--shadow-sm);
 }
@@ -1254,6 +1282,7 @@ section::before {
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     border-top: 4px solid var(--primary-color);
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
 }
 
@@ -1286,6 +1315,16 @@ section::before {
     margin-top: var(--spacing-xs);
 }
 
+.note-wide {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.note-no-margin {
+    margin: 0;
+}
+
 /* === CERTIFICATES === */
 .certificates-list {
     display: grid;
@@ -1304,6 +1343,7 @@ section::before {
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     display: flex;
     flex-direction: column;
@@ -1390,6 +1430,10 @@ section::before {
     text-align: center;
 }
 
+.contact-section {
+    padding: var(--spacing-lg) 0;
+}
+
 .contact-links {
     display: flex;
     flex-direction: column;
@@ -1407,10 +1451,39 @@ section::before {
     border-radius: 12px;
     transition: all 0.3s ease;
     border: 1px solid var(--border-color);
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+}
+
+.contact-download {
+    margin-top: var(--spacing-md);
+}
+
+.contact-download-btn {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+}
+
+.contact-update {
+    margin-top: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.contact-note {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--primary-light);
+    border-radius: 8px;
+}
+
+.contact-note-text {
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.8;
 }
 
 .contact-item:hover {
@@ -1485,10 +1558,8 @@ footer p {
         font-size: 1rem;
     }
 
-    /* CRITICAL FIX: Hero section layout - explicitly define single column grid
-       Prevents layout shift and ensures proper stacking on mobile */
     .hero {
-        min-height: auto;
+        min-height: 0;
         padding: var(--spacing-lg) 0;
     }
 
@@ -1503,8 +1574,6 @@ footer p {
         height: 250px;
     }
     
-    /* CRITICAL FIX: Mobile navigation - explicit flex behavior
-       Ensures menu toggle and nav-links work together without conflicts */
     .menu-toggle {
         display: flex;
     }
@@ -1522,7 +1591,6 @@ footer p {
         gap: 0;
         border: 1px solid var(--border-color);
         z-index: 999;
-        /* Prevent nav from pushing content on iOS */
         max-height: calc(100vh - 60px);
         overflow-y: auto;
     }
@@ -1538,13 +1606,11 @@ footer p {
         border-bottom: 1px solid var(--border-color);
     }
 
-    /* PERFORMANCE FIX: Reduce blur/backdrop-filter on mobile
-       Improves scrolling performance and battery life on mobile devices */
     header {
+        -webkit-backdrop-filter: blur(6px);
         backdrop-filter: blur(6px);
     }
 
-    /* Remove heavy blur from decoration pseudo-elements */
     body::before {
         filter: blur(30px);
     }
@@ -1563,10 +1629,12 @@ footer p {
     }
 
     .stat-card {
+        -webkit-backdrop-filter: blur(6px);
         backdrop-filter: blur(6px);
     }
 
     .card {
+        -webkit-backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
     }
 
@@ -1574,17 +1642,16 @@ footer p {
     .skill-category,
     .certificate-item,
     .contact-item {
+        -webkit-backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
     }
     
-    /* Project preview grid on mobile */
     .project-preview-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Projects grid on mobile */
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     /* Project detail page */
@@ -1630,20 +1697,13 @@ footer p {
         grid-template-columns: 1fr;
     }
     
-    /* CRITICAL FIX: Section spacing - reduce padding for better mobile spacing
-       Prevents excessive whitespace on small screens */
     section {
         padding: var(--spacing-md) 0;
     }
 
-    /* CRITICAL FIX: Avoid buggy 100vh on mobile
-       Use calc with safe fallback to ensure proper viewport height */
     .hero {
-        /* Remove min-height: calc(100vh - 80px) - causes issues on mobile browsers */
-        /* Use auto padding instead for flexible height */
     }
 
-    /* PERFORMANCE FIX: Reduce shadow complexity on mobile */
     .stat-card:hover {
         box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
     }
@@ -1656,8 +1716,6 @@ footer p {
         box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
     }
 
-    /* ACCESSIBILITY FIX: Ensure nav links are easily tappable
-       Minimum touch target size is 44x44px */
     .nav-links li a {
         padding: 0.75rem 1rem;
         display: block;
@@ -1684,9 +1742,8 @@ footer p {
         font-size: 1.75rem;
     }
 
-    /* CRITICAL FIX: Further reduce blur on very small screens
-       Very small devices have limited GPU resources */
     header {
+        -webkit-backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
     }
 
@@ -1700,8 +1757,6 @@ footer p {
         opacity: 0.35;
     }
 
-    /* CRITICAL FIX: Reduce decorative element sizes on mobile
-       Prevents layout issues and improves rendering performance */
     .stats-section::before {
         width: 300px;
         height: 200px;
@@ -1714,14 +1769,11 @@ footer p {
         right: -125px;
     }
 
-    /* CRITICAL FIX: Adjust profile photo on small screens */
     .profile-photo-container {
         width: 200px;
         height: 200px;
     }
 
-    /* PERFORMANCE FIX: Disable hover transforms on touch devices
-       Touch devices don't benefit from hover, saves rendering cycles */
     .stat-card:hover {
         transform: none;
     }
@@ -1907,6 +1959,7 @@ footer p {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
